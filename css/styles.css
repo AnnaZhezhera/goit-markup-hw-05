@@ -53,7 +53,7 @@ img {
   margin: 0;
   padding: 0;
 }
-.page-heared {
+.page-header {
   border-bottom: 1px solid var(--border-forheader-color);
 }
 .main-nav {
@@ -101,6 +101,18 @@ img {
 }
 .site-nav .link.current {
   color: var(--accent-color);
+  position: relative;
+}
+.site-nav .link.current::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--accent-color);
+  width: 100%;
+  content: "";
+  height: 4px;
+  border-radius: 2px;
 }
 .info-nav {
   display: flex;
@@ -124,6 +136,9 @@ img {
   display: flex;
   align-items: center;
   padding: 30px 0;
+}
+.link.number {
+  min-width: 142px;
 }
 .icon-envelope {
   margin-right: 10px;
