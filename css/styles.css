@@ -210,6 +210,18 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.btn-close-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.close-icon {
+  stroke: rgba(0, 0, 0, 0.1);
+}
 /* section */
 .section {
   padding-bottom: 94px;
