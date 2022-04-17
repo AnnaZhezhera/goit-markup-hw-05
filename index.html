@@ -56,7 +56,19 @@
     <main>
       <section class="hero">
         <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-        <button type="button" class="button primary">Заказать услугу</button>
+        <button type="button" class="button primary" data-modal-open>
+          Заказать услугу
+        </button>
+        <div class="hero-backdrop is-hidden" data-modal>
+          <div class="hero-modal">
+            <button data-modal-close>
+              <!-- <svg class="close-icon">
+                <use href="./images/icons.svg/symbol-defs.svg#icon-close"></use>
+              </svg> -->
+              Закрити
+            </button>
+          </div>
+        </div>
       </section>
       <section class="features">
         <div class="container">
@@ -128,25 +140,34 @@
           <h2 class="section-title">Чем мы занимаемся</h2>
           <ul class="work list">
             <li class="work-item">
-              <img
-                src="images/work1_keybord.jpg"
-                alt="Человек пишет код за компьютером"
-                width="370"
-              />
+              <div class="work-thumb">
+                <img
+                  src="images/work1_keybord.jpg"
+                  alt="Человек пишет код за компьютером"
+                  width="370"
+                />
+                <span class="work-text">Десктопные приложения</span>
+              </div>
             </li>
             <li class="work-item">
-              <img
-                src="images/work2_laptop.jpg"
-                alt="Девушка разрабатівает дизайн для смартфона"
-                width="370"
-              />
+              <div class="work-thumb">
+                <img
+                  src="images/work2_laptop.jpg"
+                  alt="Девушка разрабатівает дизайн для смартфона"
+                  width="370"
+                />
+                <span class="work-text">Мобильные приложения</span>
+              </div>
             </li>
             <li class="work-item">
-              <img
-                src="images/work3_tablet.jpg"
-                alt="Человек выбирает цвет на IPad"
-                width="370"
-              />
+              <div class="work-thumb">
+                <img
+                  src="images/work3_tablet.jpg"
+                  alt="Человек выбирает цвет на IPad"
+                  width="370"
+                />
+                <span class="work-text">Дизайнерские решения</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -388,7 +409,7 @@
           </address>
         </div>
         <div>
-          <span class="socials-text">присоединяйтесь</span>
+          <span class="caps-text">присоединяйтесь</span>
           <div class="footer-socials-group">
             <a href="" class="footer-socials">
               <svg class="icon-footer instagram" width="20px" height="20px">
@@ -422,5 +443,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
