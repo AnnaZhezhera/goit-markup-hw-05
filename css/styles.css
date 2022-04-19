@@ -108,9 +108,9 @@ p {
 }
 .site-nav .link.current::after {
   position: absolute;
+  display: block;
   bottom: 0;
   left: 0;
-  right: 0;
   background-color: var(--accent-color);
   width: 100%;
   content: "";
@@ -199,6 +199,8 @@ p {
 .hero-backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+
+  visibility: hidden;
 }
 .hero-modal {
   position: absolute;
@@ -209,18 +211,24 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  visibility: visible;
 }
 .btn-close-icon {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: none;
+  background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
+
+  padding: 0;
+  font-size: 0;
 }
 .close-icon {
   stroke: rgba(0, 0, 0, 0.1);
+  margin: 0;
 }
 /* section */
 .section {
@@ -638,14 +646,12 @@ p {
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
 }
-.project-text {
+.project-thumb > .project-text {
   position: absolute;
 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  padding: 63px 24px;
+  top: 0;
+  left: 0;
+  margin: 63px 24px;
 
   font-size: 18px;
   line-height: 1.55;
