@@ -196,6 +196,8 @@ p {
   z-index: 2;
 
   background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-backdrop.is-hidden {
   opacity: 0;
@@ -211,9 +213,14 @@ p {
 
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
   visibility: visible;
+
+  transform: translate(-50%, -50%) scale(1);
+}
+.hero-backdrop.is-hidden .hero-modal {
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-close-icon {
   position: absolute;
@@ -614,17 +621,6 @@ p {
   margin-right: 30px;
   margin-bottom: 30px;
 }
-.flex-element:hover,
-.flex-element:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.flex-element:hover .project-thumb::before,
-.flex-element:focus .project-thumb::before {
-  /* opacity: 1; */
-  transform: translateY(0);
-}
 .flex-element:nth-child(3n) {
   margin-right: 0;
 }
@@ -640,37 +636,35 @@ p {
   position: relative;
   overflow: hidden;
 }
-.project-thumb::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(33, 150, 243, 0.9);
-  /* opacity: 0; */
-  transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.project-thumb > .project-text {
+.project-overlay {
   position: absolute;
 
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  padding: 63px 24px;
+  height: 100%;
 
+  padding: 63px 24px;
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.03em;
   color: var(--white-text-color);
 
-  /* opacity: 0; */
+  background-color: rgba(33, 150, 243, 0.9);
 
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.flex-element:hover .project-text {
+.project-thumb > .project-text {
+  position: absolute;
+}
+.flex-element:hover,
+.flex-element:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.flex-element:hover .project-overlay {
   /* opacity: 1; */
   transform: translateY(0);
 }
