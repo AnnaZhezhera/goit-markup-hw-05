@@ -142,7 +142,7 @@ p {
   padding: 30px 0;
 }
 .link.number {
-  min-width: 142px;
+  white-space: nowrap;
 }
 .icon-envelope {
   margin-right: 10px;
@@ -215,12 +215,11 @@ p {
   left: 50%;
 
   visibility: visible;
-
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate(-50%, -50%) scale(1);
 }
 .hero-backdrop.is-hidden .hero-modal {
-  transform: translate(-50%, -50%) scale(0.8);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(-50%, -50%) scale(0.9);
 }
 .btn-close-icon {
   position: absolute;
